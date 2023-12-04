@@ -1,0 +1,11 @@
+.editorconfig
+.eslint*
+.prettierrc.js
+tsconfig.json
+
+lib/
+test/
+
+.husky/
+.vscode/
+.github/
