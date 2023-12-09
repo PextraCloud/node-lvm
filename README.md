@@ -4,9 +4,10 @@
 
 <br>
 
-[![License](https://badgen.net/npm/license/@pextra/node-lvm)](https://opensource.org/license/mit/)
-[![npm dependents](https://badgen.net/npm/dependents/@pextra/node-lvm)](https://www.npmjs.com/package/@pextra/node-lvm?activeTab=dependents)
 [![Downloads](https://badgen.net/npm/dt/@pextra/node-lvm)](https://www.npmjs.com/package/@pextra/node-lvm)
+[![npm dependents](https://badgen.net/npm/dependents/@pextra/node-lvm)](https://www.npmjs.com/package/@pextra/node-lvm?activeTab=dependents)
+[![Version](https://badgen.net/npm/v/@pextra/node-lvm)](https://www.npmjs.com/package/@pextra/node-lvm)
+[![License](https://badgen.net/npm/license/@pextra/node-lvm)](https://opensource.org/license/mit/)
 
 ## NOTICE
 
