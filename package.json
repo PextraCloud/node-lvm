@@ -33,7 +33,6 @@
     "lint": "gts lint",
     "fix": "gts fix",
     "build": "tsc -p tsconfig.build.json",
-    "compile": "npm run build",
     "clean": "gts clean",
     "posttest": "npm run lint",
     "test:run": "npm run test:all:run",
