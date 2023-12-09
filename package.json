@@ -1,5 +1,5 @@
 {
-  "name": "lvm2",
+  "name": "@pextra/node-lvm",
   "version": "0.2.0",
   "description": "A NodeJS wrapper for LVM (logical volume manager) written in TypeScript.",
   "main": "dist/index.js",
@@ -33,6 +33,7 @@
     "lint": "gts lint",
     "fix": "gts fix",
     "build": "tsc -p tsconfig.build.json",
+	"prepublishOnly": "npm run build",
     "clean": "gts clean",
     "posttest": "npm run lint",
     "test:run": "npm run test:all:run",
@@ -43,12 +44,12 @@
     "test": "npm run test:run",
     "test:unit": "npm run test:unit:run",
     "test:integration": "npm run test:integration:run",
-    "test:functional": "export LVM2_TEST_DEVICE=$(bash createLoopDevice.sh create) && (echo $LVM2_TEST_DEVICE && npm run test:_run ; bash createLoopDevice.sh delete $LVM2_TEST_DEVICE)",
+    "test:functional": "export NODELVM_TEST_DEVICE=$(bash createLoopDevice.sh create) && (echo $NODELVM_TEST_DEVICE && npm run test:_run ; bash createLoopDevice.sh delete $NODELVM_TEST_DEVICE)",
     "test:_run": "mocha --require ts-node/register test/$MOCHA_TEST_FOLDER/*.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PextraCloud/lvm2.git"
+    "url": "git+https://github.com/PextraCloud/node-lvm.git"
   },
   "keywords": [
     "lvm",

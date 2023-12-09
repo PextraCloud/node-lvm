@@ -1,12 +1,12 @@
-# lvm2
+# node-lvm
 
 >A NodeJS wrapper for LVM (logical volume manager) written in TypeScript.
 
 <br>
 
-[![License](https://badgen.net/npm/license/lvm2)](https://opensource.org/license/mit/)
-[![npm dependents](https://badgen.net/npm/dependents/lvm2)](https://www.npmjs.com/package/lvm2?activeTab=dependents)
-[![Downloads](https://badgen.net/npm/dt/lvm2)](https://www.npmjs.com/package/lvm2)
+[![License](https://badgen.net/npm/license/@pextra/node-lvm)](https://opensource.org/license/mit/)
+[![npm dependents](https://badgen.net/npm/dependents/@pextra/node-lvm)](https://www.npmjs.com/package/@pextra/node-lvm?activeTab=dependents)
+[![Downloads](https://badgen.net/npm/dt/@pextra/node-lvm)](https://www.npmjs.com/package/@pextra/node-lvm)
 
 ## NOTICE
 
@@ -19,7 +19,7 @@ Most commands are implemented, but a few are not yet. Not many of the command op
 ## Install
 
 ```sh
-npm install lvm2
+npm install @pextra/node-lvm
 ```
 
 ## Usage
@@ -37,9 +37,9 @@ An error will be thrown if the command fails (i.e. returns a non-zero exit code)
 Example:
 
 ```ts
-import lvm2 from 'lvm2';
+import lvm from '@pextra/node-lvm';
 
-const result = await lvm2.pv.Create('/dev/loop0', {verbose: true});
+const result = await lvm.pv.Create('/dev/loop0', {verbose: true});
 
 /*
 	Formed command:
@@ -70,4 +70,4 @@ We use [gts](https://github.com/google/gts) for linting and formatting.
 
 ## License
 
-lvm2 is licensed under the [MIT License](./LICENSE).
+node-lvm is licensed under the [MIT License](./LICENSE).

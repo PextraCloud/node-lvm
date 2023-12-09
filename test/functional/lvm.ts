@@ -35,10 +35,10 @@ if (!getuid) {
 
 describe('lvm functional tests', async () => {
 	const loopDevice: LVMBlockDevice = process.env
-		.LVM2_TEST_DEVICE as LVMBlockDevice;
+		.NODELVM_TEST_DEVICE as LVMBlockDevice;
 
 	if (!loopDevice) {
-		throw new Error('LVM2_TEST_DEVICE must be set to a block device.');
+		throw new Error('NODELVM_TEST_DEVICE must be set to a block device.');
 	}
 	console.log(`Using block device: ${loopDevice}.`);
 
@@ -64,7 +64,7 @@ describe('lvm functional tests', async () => {
 				.catch(err => done(err));
 		});
 
-		const vgName = `lvm2test-vg-${Date.now()}`;
+		const vgName = `nodelvmtest-vg-${Date.now()}`;
 		it('should create a volume group', done => {
 			lvm.vg
 				.Create(vgName, '4M', loopDevice, {})
@@ -86,7 +86,7 @@ describe('lvm functional tests', async () => {
 				.catch(err => done(err));
 		});
 
-		const lvName = `lvm2test-lv-${Date.now()}`;
+		const lvName = `nodelvmtest-lv-${Date.now()}`;
 		it('should create a logical volume', done => {
 			lvm.lv
 				.Create(

@@ -21,7 +21,7 @@ check_root () {
     [ "$(id -u)" -eq 0 ]
 }
 
-readonly TEST_IMAGE_PATH="/tmp/lvm2-test.img"
+readonly TEST_IMAGE_PATH="/tmp/node-lvm_test.img"
 
 if [ $# -eq 0 ]; then
 	echo -e "Usage:\n\t$0 create\n\t$0 delete <loop device>\n"

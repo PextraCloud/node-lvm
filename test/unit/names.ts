@@ -24,7 +24,7 @@ describe('lvm name unit tests', () => {
 	describe('vg.Create with invalid names', () => {
 		it('should throw an error', done => {
 			lvm.vg
-				.Create('.', '1M', '/dev/lvm2test-nonexistent', {})
+				.Create('.', '1M', '/dev/nodelvmtest-nonexistent', {})
 				.catch(() => {
 					done();
 				});
@@ -32,7 +32,7 @@ describe('lvm name unit tests', () => {
 
 		it('should throw an error', done => {
 			lvm.vg
-				.Create('..', '1M', '/dev/lvm2test-nonexistent', {})
+				.Create('..', '1M', '/dev/nodelvmtest-nonexistent', {})
 				.catch(() => {
 					done();
 				});
