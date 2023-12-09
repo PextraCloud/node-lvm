@@ -32,6 +32,7 @@ jobs:
           git-message: 'chore(release): {version}'
           git-user-name: 'Release Bot'
           git-user-email: 'noreply@example.com'
+          release-count: 1
 
 
       - name: Publish to npm registry
