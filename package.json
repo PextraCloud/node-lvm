@@ -1,69 +1,69 @@
 {
-	"name": "lvm2",
-	"version": "0.0.0",
-	"description": "A NodeJS wrapper for LVM (logical volume manager) written in TypeScript.",
-	"main": "dist/index.js",
-	"exports": {
-		"node": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.js"
-		}
-	},
-	"directories": {
-		"lib": "lib",
-		"test": "test"
-	},
-	"engines": {
-		"node": ">=14.0.0"
-	},
-	"devDependencies": {
-		"@commitlint/cli": "^18.4.3",
-		"@commitlint/config-conventional": "^18.4.3",
-		"@types/chai": "^4.3.11",
-		"@types/mocha": "^10.0.6",
-		"@types/node": "20.8.2",
-		"chai": "^4.3.10",
-		"gts": "^5.2.0",
-		"husky": "^8.0.3",
-		"mocha": "^10.2.0",
-		"typescript": "~5.2.0"
-	},
-	"scripts": {
-		"lint": "gts lint",
-		"fix": "gts fix",
-		"build": "tsc -p tsconfig.build.json",
-		"compile": "npm run build",
-		"clean": "gts clean",
-		"posttest": "npm run lint",
-		"test:run": "npm run test:all:run",
-		"test:unit:run": "MOCHA_TEST_FOLDER=unit npm run test:_run",
-		"test:integration:run": "MOCHA_TEST_FOLDER=integration npm run test:_run",
-		"test:functional:run": "MOCHA_TEST_FOLDER=functional npm run test:functional",
-		"test:all:run": "MOCHA_TEST_FOLDER='**' npm run test:functional",
-		"test": "npm run test:run",
-		"test:unit": "npm run test:unit:run",
-		"test:integration": "npm run test:integration:run",
-		"test:functional": "export LVM2_TEST_DEVICE=$(bash createLoopDevice.sh create) && (echo $LVM2_TEST_DEVICE && npm run test:_run ; bash createLoopDevice.sh delete $LVM2_TEST_DEVICE)",
-		"test:_run": "mocha --require ts-node/register test/$MOCHA_TEST_FOLDER/*.ts"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/PextraCloud/lvm2.git"
-	},
-	"keywords": [
-		"lvm",
-		"lvm2",
-		"logical volume manager",
-		"logical volume management",
-		"volume group",
-		"physical volume",
-		"logical volume",
-		"linux"
-	],
-	"author": "Pextra Inc.",
-	"license": "MIT",
-	"dependencies": {
-		"ts-node": "^10.9.1"
-	}
+  "name": "lvm2",
+  "version": "0.1.0",
+  "description": "A NodeJS wrapper for LVM (logical volume manager) written in TypeScript.",
+  "main": "dist/index.js",
+  "exports": {
+    "node": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.8.2",
+    "chai": "^4.3.10",
+    "gts": "^5.2.0",
+    "husky": "^8.0.3",
+    "mocha": "^10.2.0",
+    "typescript": "~5.2.0"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "fix": "gts fix",
+    "build": "tsc -p tsconfig.build.json",
+    "compile": "npm run build",
+    "clean": "gts clean",
+    "posttest": "npm run lint",
+    "test:run": "npm run test:all:run",
+    "test:unit:run": "MOCHA_TEST_FOLDER=unit npm run test:_run",
+    "test:integration:run": "MOCHA_TEST_FOLDER=integration npm run test:_run",
+    "test:functional:run": "MOCHA_TEST_FOLDER=functional npm run test:functional",
+    "test:all:run": "MOCHA_TEST_FOLDER='**' npm run test:functional",
+    "test": "npm run test:run",
+    "test:unit": "npm run test:unit:run",
+    "test:integration": "npm run test:integration:run",
+    "test:functional": "export LVM2_TEST_DEVICE=$(bash createLoopDevice.sh create) && (echo $LVM2_TEST_DEVICE && npm run test:_run ; bash createLoopDevice.sh delete $LVM2_TEST_DEVICE)",
+    "test:_run": "mocha --require ts-node/register test/$MOCHA_TEST_FOLDER/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PextraCloud/lvm2.git"
+  },
+  "keywords": [
+    "lvm",
+    "lvm2",
+    "logical volume manager",
+    "logical volume management",
+    "volume group",
+    "physical volume",
+    "logical volume",
+    "linux"
+  ],
+  "author": "Pextra Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
 }
