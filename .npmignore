@@ -2,9 +2,13 @@
 .eslint*
 .prettierrc.js
 tsconfig.json
+tsconfig.build.json
 
 lib/
 test/
+
+createLoopDevice.sh
+SECURITY.md
 
 .husky/
 .vscode/
