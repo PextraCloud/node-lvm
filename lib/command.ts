@@ -62,12 +62,24 @@ const FormCommand = (factoryOptions: CommandFactoryOptions) => {
 /**
  * Executes a command and returns a Promise.
  */
-const ExecuteCommand = <T>(command: string, parseJson = true) => {
+const ExecuteCommand = <T>(
+	command: string,
+	parseJson = true,
+	validator?: () => boolean | Error
+) => {
 	return new Promise<{
 		stdout: string;
 		stderr: string;
 		data: T;
 	}>((resolve, reject) => {
+		if (validator) {
+			try {
+				validator();
+			} catch (e) {
+				return reject(e);
+			}
+		}
+
 		exec(command, (err, stdout, stderr) => {
 			if (err) {
 				return reject(err);

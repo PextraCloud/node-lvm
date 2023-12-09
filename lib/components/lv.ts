@@ -22,6 +22,10 @@ import {FormCommand, ExecuteCommand} from '../command';
 import {CommandOptions} from '../types/command';
 import {LVMSize, LVMSizeExtents} from '../types/common';
 import {LVMLogicalVolume} from '../types/lv';
+import {
+	ValidateLVMVolumeGroupName,
+	ValidateLVMLogicalVolumeName,
+} from '../names';
 
 const GetLogicalVolumesCommand = FormCommand({
 	command: 'lvs',
@@ -79,7 +83,9 @@ const Get = (volumeGroup: string, options: CommandOptions) => {
 		GetLogicalVolumeCommand({
 			args: [volumeGroup],
 			options,
-		})
+		}),
+		true,
+		() => ValidateLVMVolumeGroupName(volumeGroup)
 	);
 };
 
@@ -115,7 +121,10 @@ const Create = (
 			args,
 			options,
 		}),
-		false
+		false,
+		() =>
+			ValidateLVMLogicalVolumeName(name) &&
+			ValidateLVMLogicalVolumeName(volumeGroup)
 	);
 };
 
@@ -133,7 +142,11 @@ const Rename = (
 			args: [`${volumeGroup}/${name}`, newName],
 			options,
 		}),
-		false
+		false,
+		() =>
+			ValidateLVMLogicalVolumeName(name) &&
+			ValidateLVMLogicalVolumeName(newName) &&
+			ValidateLVMLogicalVolumeName(volumeGroup)
 	);
 };
 
@@ -146,7 +159,10 @@ const Remove = (volumeGroup: string, name: string, options: CommandOptions) => {
 			args: [`${volumeGroup}/${name}`],
 			options,
 		}),
-		false
+		false,
+		() =>
+			ValidateLVMLogicalVolumeName(name) &&
+			ValidateLVMLogicalVolumeName(volumeGroup)
 	);
 };
 
@@ -181,7 +197,10 @@ const Extend = (
 			args,
 			options,
 		}),
-		false
+		false,
+		() =>
+			ValidateLVMLogicalVolumeName(name) &&
+			ValidateLVMLogicalVolumeName(volumeGroup)
 	);
 };
 
@@ -216,7 +235,10 @@ const Reduce = (
 			args,
 			options,
 		}),
-		false
+		false,
+		() =>
+			ValidateLVMLogicalVolumeName(name) &&
+			ValidateLVMLogicalVolumeName(volumeGroup)
 	);
 };
 
