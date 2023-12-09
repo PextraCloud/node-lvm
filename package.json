@@ -1,6 +1,6 @@
 {
   "name": "@pextra/node-lvm",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A NodeJS wrapper for LVM (logical volume manager) written in TypeScript.",
   "main": "dist/index.js",
   "exports": {
@@ -28,7 +28,7 @@
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
     "typescript": "~5.2.0",
-	"ts-node": "^10.9.1"
+    "ts-node": "^10.9.1"
   },
   "scripts": {
     "lint": "gts lint",
