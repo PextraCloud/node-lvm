@@ -1,4 +1,4 @@
-# [0.3.0](https://github.com/PextraCloud/node-lvm/compare/v0.2.0...v0.3.0) (2023-12-09)
+# [0.4.0](https://github.com/PextraCloud/node-lvm/compare/v0.2.0...v0.4.0) (2023-12-09)
 
 
 ### Features
