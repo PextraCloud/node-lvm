@@ -34,9 +34,11 @@ jobs:
           git-user-name: 'Release Bot'
           git-user-email: 'noreply@example.com'
           release-count: 1
+          skip-on-empty: false
 
       - name: Create release
         uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
