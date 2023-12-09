@@ -5,6 +5,7 @@ tsconfig.json
 tsconfig.build.json
 commitlint.config.js
 
+lib/
 test/
 
 createLoopDevice.sh
