@@ -22,6 +22,7 @@ import {FormCommand, ExecuteCommand} from '../command';
 import {CommandOptions} from '../types/command';
 import {LVMSize, LVMBlockDevice} from '../types/common';
 import {LVMVolumeGroup} from '../types/vg';
+import {ValidateLVMVolumeGroupName} from '../names';
 
 const GetVolumeGroupsCommand = FormCommand({
 	command: 'vgs',
@@ -79,7 +80,9 @@ const Get = (name: string, options: CommandOptions) => {
 		GetVolumeGroupCommand({
 			options,
 			args: [name],
-		})
+		}),
+		true,
+		() => ValidateLVMVolumeGroupName(name)
 	);
 };
 
@@ -109,7 +112,8 @@ const Create = (
 			options,
 			args,
 		}),
-		false
+		false,
+		() => ValidateLVMVolumeGroupName(name)
 	);
 };
 
@@ -119,11 +123,13 @@ const Create = (
 const Rename = (oldName: string, newName: string, options?: CommandOptions) => {
 	return ExecuteCommand<{}>(
 		RenameVolumeGroupCommand({
-			// TODO validate names
 			args: [oldName, newName],
 			options,
 		}),
-		false
+		false,
+		() =>
+			ValidateLVMVolumeGroupName(oldName) &&
+			ValidateLVMVolumeGroupName(newName)
 	);
 };
 
@@ -136,7 +142,8 @@ const Remove = (name: string, options?: CommandOptions) => {
 			args: [name],
 			options,
 		}),
-		false
+		false,
+		() => ValidateLVMVolumeGroupName(name)
 	);
 };
 
@@ -154,7 +161,8 @@ const Extend = (
 			args: [name, blockDevice],
 			options,
 		}),
-		false
+		false,
+		() => ValidateLVMVolumeGroupName(name)
 	);
 };
 
@@ -172,7 +180,8 @@ const Reduce = (
 			args: [name, blockDevice],
 			options,
 		}),
-		false
+		false,
+		() => ValidateLVMVolumeGroupName(name)
 	);
 };
 
