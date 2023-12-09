@@ -27,7 +27,8 @@
     "gts": "^5.2.0",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
-    "typescript": "~5.2.0"
+    "typescript": "~5.2.0",
+	"ts-node": "^10.9.1"
   },
   "scripts": {
     "lint": "gts lint",
@@ -62,8 +63,5 @@
     "linux"
   ],
   "author": "Pextra Inc.",
-  "license": "MIT",
-  "dependencies": {
-    "ts-node": "^10.9.1"
-  }
+  "license": "MIT"
 }
