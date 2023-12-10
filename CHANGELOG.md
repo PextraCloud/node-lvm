@@ -1,9 +1,9 @@
-## [0.4.4](https://github.com/PextraCloud/node-lvm/compare/v0.4.3...v0.4.4) (2023-12-09)
+# [0.5.0](https://github.com/PextraCloud/node-lvm/compare/v0.4.4...v0.5.0) (2023-12-10)
 
 
-### Bug Fixes
+### Features
 
-* change types from .d.ts to .ts ([5af057c](https://github.com/PextraCloud/node-lvm/commit/5af057c58a2d2ce883205567c9768ca24670a701))
+* improve createLoopDevice.sh ([f45cf01](https://github.com/PextraCloud/node-lvm/commit/f45cf01bc8b8a5537b07825ba6cef66affcf695c))
 
 
 
