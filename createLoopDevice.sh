@@ -17,6 +17,9 @@
 # COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+set -e
+cd "$(dirname "$0")"
+
 check_root () {
     [ "$(id -u)" -eq 0 ]
 }
@@ -47,16 +50,20 @@ delete () {
 
 check_root || { echo "You must be root to run this script."; exit 1; }
 
-if [ "$1" == "create" ]; then
+case "$1" in
+"create")
 	create
-elif [ "$1" == "delete" ]; then
+	;;
+"delete")
 	if [ $# -ne 2 ]; then
 		echo "Usage: $0 delete <loop device>"
 		exit 1
 	fi
 
 	delete $@
-else
+	;;
+*)
 	echo "Invalid argument: $1"
 	exit 1
-fi
+	;;
+esac
