@@ -90,9 +90,7 @@ const ExecuteCommand = <T>(
 				try {
 					data = JSON.parse(stdout);
 				} catch (e) {
-					// TODO handle this better
-					console.log('Error parsing JSON.');
-					console.error(stdout);
+					reject(e);
 				}
 
 				if (data && data.report && data.report[0]) {
