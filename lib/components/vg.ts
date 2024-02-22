@@ -151,14 +151,13 @@ const Remove = (name: string, options?: CommandOptions) => {
  * Adds a physical volume to an existing LVM volume group.
  */
 const Extend = (
-	// TODO add support for multiple block devices
 	name: string,
-	blockDevice: LVMBlockDevice,
+	blockDevice: LVMBlockDevice | Array<LVMBlockDevice>,
 	options?: CommandOptions
 ) => {
 	return ExecuteCommand<{}>(
 		ExtendVolumeGroupCommand({
-			args: [name, blockDevice],
+			args: [name, ...blockDevice],
 			options,
 		}),
 		false,
@@ -170,14 +169,13 @@ const Extend = (
  * Removes a physical volume from an existing LVM volume group.
  */
 const Reduce = (
-	// TODO add support for multiple block devices
 	name: string,
-	blockDevice: LVMBlockDevice,
+	blockDevice: LVMBlockDevice | Array<LVMBlockDevice>,
 	options?: CommandOptions
 ) => {
 	return ExecuteCommand<{}>(
 		ReduceVolumeGroupCommand({
-			args: [name, blockDevice],
+			args: [name, ...blockDevice],
 			options,
 		}),
 		false,
