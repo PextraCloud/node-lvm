@@ -9,18 +9,18 @@
 [![Version](https://badgen.net/npm/v/@pextra/node-lvm)](https://www.npmjs.com/package/@pextra/node-lvm)
 [![License](https://badgen.net/npm/license/@pextra/node-lvm)](https://opensource.org/license/mit/)
 
-## NOTICE
-
-**This package is still in development and *is not* yet ready for production use. There *will* be breaking changes before the package is stable.**
-
-Most commands are implemented, but a few are not yet. Not many of the command options are implemented yet, but the most common ones are.
-
-**Please open an issue if you would like a specific option implemented.**
-
 ## Install
+
+With npm:
 
 ```sh
 npm install @pextra/node-lvm
+```
+
+With bun:
+
+```sh
+bun install @pextra/node-lvm
 ```
 
 ## Usage
@@ -55,7 +55,7 @@ const result = await lvm.pv.Create('/dev/loop0', {verbose: true});
 */
 ```
 
-TODO
+Please see autocompletion in your editor for a full list of available commands and options.
 
 ## Support/Contact
 
